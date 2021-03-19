@@ -12,16 +12,11 @@ public class LegTargetBehaviour : MonoBehaviour
 
     public float transitionSpeed;
 
-    private Rigidbody legPosRigidbody;
-
     private bool canMove = false;
 
     public float stepDistance;
 
-    private void Start()
-    {
-        legPosRigidbody = legPos.GetComponent<Rigidbody>();
-    }
+    public BodyPosition bodyPos;
 
     void Update()
     {
@@ -54,12 +49,13 @@ public class LegTargetBehaviour : MonoBehaviour
     {
         if (canMove)
         {
-            LerpPosition(transform.position, 0.1f);
+            StartCoroutine(LerpPosition(transform.position, 0.1f));
+            bodyPos.UpdateBodyYPosition();
             canMove = false;
         }
     }
 
-    private void LerpPosition(Vector3 targetPosition, float duration)
+    private IEnumerator LerpPosition(Vector3 targetPosition, float duration)
     {
         float time = 0;
         Vector3 startPosition = legPos.position;
@@ -68,6 +64,7 @@ public class LegTargetBehaviour : MonoBehaviour
         {
             legPos.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
             time += Time.deltaTime;
+            yield return null;
         }
         legPos.position = targetPosition;
     }

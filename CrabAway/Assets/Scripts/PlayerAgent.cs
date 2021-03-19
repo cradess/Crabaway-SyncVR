@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 
 public class PlayerAgent : MonoBehaviour
@@ -11,9 +12,13 @@ public class PlayerAgent : MonoBehaviour
     UnityEvent m_OnReachDestination;
 
     private Transform targetPos;
-    [SerializeField] private Transform[] targets;
+    [SerializeField] public Transform[] targets;
+
+    public GameObject crab;
 
     private int i = 0;
+
+    public Text testingDoneText;
 
     void Start()
     {
@@ -29,7 +34,7 @@ public class PlayerAgent : MonoBehaviour
 
     public void Update()
     {
-        if (Vector3.Distance(targetPos.position, transform.position) <= 0.2f && i < targets.Length - 1)
+        if (Vector3.Distance(targetPos.position, transform.position) <= 0.8f && i < targets.Length - 1)
         {
             m_OnReachDestination.Invoke();
         }
@@ -49,5 +54,10 @@ public class PlayerAgent : MonoBehaviour
     {
         i++;
         changeAgentGoal(targets[i]);
+
+        if (i == 2)
+        {
+            testingDoneText.enabled = true;
+        }
     }
 }
