@@ -34,11 +34,13 @@ public class PlayerAgent : MonoBehaviour
 
     public void Update()
     {
-        if (Vector3.Distance(targetPos.position, transform.position) <= 0.8f && i < targets.Length - 1)
+        Debug.Log("i = " + i);
+        testingDoneText.enabled = true;
+        if (Vector3.Distance(targetPos.position, transform.position) <= 0.8f && i < targets.Length)
         {
             m_OnReachDestination.Invoke();
         }
-        else if(i == targets.Length - 1)
+        if(i == targets.Length - 1)
         {
             playerAgent.autoBraking = true;
         }
@@ -53,11 +55,12 @@ public class PlayerAgent : MonoBehaviour
     private void DestinationReached()
     {
         i++;
-        changeAgentGoal(targets[i]);
 
-        if (i == 2)
+        if (i == 3)
         {
-            testingDoneText.enabled = true;
+            testingDoneText.gameObject.SetActive(true);
         }
+
+        changeAgentGoal(targets[i]);
     }
 }

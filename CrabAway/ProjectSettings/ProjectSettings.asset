@@ -129,7 +129,9 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 11400000, guid: b4e0141f5c2c11145b33742c20384a07, type: 2}
+  - {fileID: 0}
   - {fileID: -8632618506093449378, guid: dfaa6d3b82fb7a54393321c063b6c034, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0

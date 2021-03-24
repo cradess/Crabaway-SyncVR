@@ -25,21 +25,21 @@ public class TestingSesion : MonoBehaviour
 
     IEnumerator ChangePlayerMoveSpeed()
     {
-        yield return new WaitForSeconds(40);
+        yield return new WaitForSeconds(30);
             plAgent.speed = 0.5f;
             speed = 2f;
             speedText.color = Color.red;
             yield return new WaitForSeconds(1f);
             speedText.color = Color.black;
 
-        yield return new WaitForSeconds(40);
+        yield return new WaitForSeconds(30);
             plAgent.speed = 1f;
             speed = 3f;
             speedText.color = Color.red;
             yield return new WaitForSeconds(1f);
             speedText.color = Color.black;
 
-        yield return new WaitForSeconds(40);
+        yield return new WaitForSeconds(30);
             plAgent.speed = 1.5f;
             speed = 4f;
             speedText.color = Color.red;
