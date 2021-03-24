@@ -3,10 +3,20 @@
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.ide.vscode": "1.2.3",
+<<<<<<< HEAD
+=======
+    "com.unity.inputsystem": "1.0.2",
+    "com.unity.render-pipelines.universal": "7.5.3",
+>>>>>>> f0906e6d213d626786af0d3e5f167a0b86993ddc
     "com.unity.test-framework": "1.1.22",
     "com.unity.textmeshpro": "2.1.1",
     "com.unity.timeline": "1.2.18",
     "com.unity.ugui": "1.0.0",
+<<<<<<< HEAD
+=======
+    "com.unity.xr.oculus": "1.7.0",
+    "com.valvesoftware.unity.openvr": "file:G:/Downloads/com.valvesoftware.unity.openvr-1.1.4.tgz",
+>>>>>>> f0906e6d213d626786af0d3e5f167a0b86993ddc
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
