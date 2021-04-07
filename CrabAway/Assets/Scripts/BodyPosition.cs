@@ -28,8 +28,7 @@ public class BodyPosition : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("averageRightLegsYPos: " + averageRightLegsYPos +
-                  "         averageLeftLegsYPos: " + averageLeftLegsYPos);
+        //Debug.Log("averageRightLegsYPos: " + averageRightLegsYPos + "         averageLeftLegsYPos: " + averageLeftLegsYPos);
 
         UpdateBodyPosition();
         UpdateBodyRotation();
@@ -42,10 +41,12 @@ public class BodyPosition : MonoBehaviour
     public void UpdateBodyRotation()
     {
         bodyDirection = plAgent.destination - transform.position;
-        bodyRotation = Quaternion.LookRotation(bodyDirection) * Quaternion.Euler(0, 90f, 0);
+        bodyRotation = Quaternion.LookRotation(bodyDirection) * Quaternion.Euler(0, 0, 0);
         bodyRotation.x = 0;
 
-        /////
+        //// 
+        
+        /*
 
         combinedRightLegsYPos = 0;
         combinedLeftLegsYPos = 0;
@@ -72,8 +73,11 @@ public class BodyPosition : MonoBehaviour
 
         var test = Quaternion.FromToRotation(Vector3.up, averageLeftLegsYPos - averageRightLegsYPos).eulerAngles.y ;//Vector3.Angle(averageLeftLegsYPos, averageRightLegsYPos);
         Debug.Log("test angle: " + test);
-        /////
         
+        */
+
+        ///// 
+
         bodyRotation.z = 0;
 
         transform.rotation = Quaternion.Lerp(transform.rotation, bodyRotation, 0.2f * Time.deltaTime);
@@ -90,9 +94,9 @@ public class BodyPosition : MonoBehaviour
 
         averageLegYPos = combinedLegYPos / 8;
 
-        if (Mathf.Abs(transform.position.y - averageLegYPos) > 1.1f || Mathf.Abs(transform.position.y - averageLegYPos) < 0.9f)
-        {
+        //if (Mathf.Abs(transform.position.y - averageLegYPos) > 1.1f || Mathf.Abs(transform.position.y - averageLegYPos) < 0.9f)
+        //{
            transform.position = new Vector3(transform.position.x, averageLegYPos + offset, transform.position.z);
-        }
+        //}
     }
 }

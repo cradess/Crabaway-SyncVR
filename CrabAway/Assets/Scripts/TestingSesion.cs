@@ -14,7 +14,7 @@ public class TestingSesion : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ChangePlayerMoveSpeed());
+        //StartCoroutine(ChangePlayerMoveSpeed());
     }
 
     // Update is called once per frame

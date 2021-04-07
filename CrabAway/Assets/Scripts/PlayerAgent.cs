@@ -34,8 +34,7 @@ public class PlayerAgent : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log("i = " + i);
-        testingDoneText.enabled = true;
+        //testingDoneText.enabled = true;
         if (Vector3.Distance(targetPos.position, transform.position) <= 0.8f && i < targets.Length)
         {
             m_OnReachDestination.Invoke();
